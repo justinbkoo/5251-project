@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/hamming-styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles/syndrome-styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <title>Some codes</title>
 </head>
@@ -23,11 +23,12 @@
             </ul>
         </div>
     </nav>
+    <p id="preface">To illustrate <i>syndrome decoding</i> we use the specific linear [5,3] code found in the accompanying paper, under the section titled "Linear Codes". To summarize, the codewords are:</p>
+    <ul><li>{00000, 10010, 01011, 00111, 11001, 10101, 01100, 11110}</li></ul>
     <div class = "instructions">
         <ol><b>Instructions</b>
-            <li>Enter a 4-bit word in the left fields below.</li>
-            <li>Press "Encode" to see the Hamming [7,4] encoding of that word in the right fields below.</li>
-            <li>If desired, modify the 7-bit encoding on the right fields below and press "Decode" to see the Hamming [7,4] decoding of the encoding.</li>
+            <li>Enter any 5-bit word in the left fields below.</li>
+            <li>Press "Decode" to see the decoding of the word in the right fields below.</li>
         </ol>
     </div>
     <div class="input-board">
@@ -36,24 +37,19 @@
             <input class = "bit" id = "i2" type="text" maxlength="1">
             <input class = "bit" id = "i3" type="text" maxlength="1">
             <input class = "bit" id = "i4" type="text" maxlength="1">
+            <input class = "bit" id = "i5" type="text" maxlength="1">
         </span>
         <div id="buttons">
-            <p>Encode</p>
-            <img id = "encode" class = "button" src="images/arrow-forward.png">
             <p>Decode</p>
-            <img id = "decode" class="button" src="images/arrow-backward.png">
+            <img id = "decode" class="button" src="images/arrow-forward.png">
         </div>
         <span class= "input-area" id="decode-area">
             <input class = "bit" id = "o1" type="text" maxlength="1">
             <input class = "bit" id = "o2" type="text" maxlength="1"> 
             <input class = "bit" id = "o3" type="text" maxlength="1"> 
             <input class = "bit" id = "o4" type="text" maxlength="1"> 
-            <input class = "bit" id = "o5" type="text" maxlength="1"> 
-            <input class = "bit" id = "o6" type="text" maxlength="1"> 
-            <input class = "bit" id = "o7" type="text" maxlength="1">    
+            <input class = "bit" id = "o5" type="text" maxlength="1">    
         </span>
     </div>
-    <script src="node_modules/math.min.js" type="text/javascript"></script>
-    <script src="scripts/hamming.js"></script>
+    <script src="scripts/syndrome.js"></script>
 </body>
-</html>

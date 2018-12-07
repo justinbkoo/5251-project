@@ -1,0 +1,67 @@
+.instructions {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#repititions {
+    margin-left: 5%;
+    size: 50;
+}
+
+.input-board {
+    text-align: center;
+    position: relative;
+    overflow-x: auto;
+}
+
+.input-area {
+    display: inline-block;
+    height: 400px;
+    width: 26%;
+    margin-top: 50px;
+}
+
+#encode-area {
+    margin-right: 4%;
+}
+
+#encoding-area {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#decode-area {
+    margin-left: 4%;
+}
+
+.buttons {
+    display: inline-block;
+    position: absolute;
+}
+
+#encode-buttons{
+    top: 35%;
+    left: 33.33%;
+    -ms-transform: translateY(-35%);
+    transform: translateY(-35%);
+    -ms-transform: translateX(-33%);
+    transform: translateX(-33%);
+}
+
+#decode-buttons{
+    top: 35%;
+    left: 66.66%;
+    -ms-transform: translateY(-35%);
+    transform: translateY(-35%);
+    -ms-transform: translateX(-66%);
+    transform: translateX(-66%);
+}
+
+.button {
+    height: 50px;
+    width: 50px;
+}
+
+.button:hover {
+    cursor: pointer;
+}

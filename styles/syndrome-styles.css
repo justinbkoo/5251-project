@@ -1,0 +1,45 @@
+#preface {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.instructions {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.bit {
+    width: 30px;
+}
+
+.input-board {
+    text-align: center;
+    position: relative;
+    overflow-x: auto;
+    height: 400px;
+}
+
+.input-area {
+    display: inline-block;
+}
+
+#encode-area {
+    margin-right: 5%;
+}
+
+#decode-area {
+    margin-left: 5%;
+}
+
+.button {
+    height: 20px;
+    width: 20px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+#buttons {
+    display: inline-block;
+}

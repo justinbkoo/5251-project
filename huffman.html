@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles/huffman-styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="scripts/p5.min.js"></script>
-    <script src="scripts/huffman.js"></script>
     <title>Some codes</title>
 </head>
 <body>
@@ -18,17 +18,53 @@
             <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="hamming.html">Hamming [7,4] Code</a></li>
+                <li><a href="syndrome.html">Syndrome Decoding</a></li>
                 <li><a href="repitition.html">Repititon Codes</a></li>
                 <li><a href="huffman.html">Huffman Codes</a></li>
             </ul>
         </div>
     </nav>
-    <div class="form-group">
-        <label for="comment">Enter text in the field below and click encode!</label>
-        <textarea class="form-control" rows="5" id="comment"></textarea>
+    <div class = "instructions">
+        <ol><b>Instructions</b>
+            <li>Enter text in the left textfield below</li>
+            <li>Press "Encode" to see the Huffman encoding in the right textfield below as well as its Huffman tree.</li>
+            <li>Modify the encoding however you would like (possibly using the Huffman tree) and press "Decode" to see the decoding.</li>
+            <li>
+                Try some presets!
+                <ul>
+                    <li><button id="lowercase">Every letter in the English alphabet</button></li>
+                    <li><button id="diverse">A very diverse sentence</button></li>
+                    <li><button id="unbalanced">A very unbalanced Huffman tree</button></li>
+                    <li><button id="distinct">95 distinct frequencies</button></li>
+                    <li><button id="mystery">???!</button></li>
+                </ul>    
+            </li>
+        </ol>
     </div>
-    <div id="sketch-holder">
-        
+    <div class="input-board">
+        <textarea class="input-area" id="encode-area"></textarea>
+        <div id="buttons">
+            <p>Encode</p>
+            <img class="button" id="encode" src="images/arrow-forward.png">
+            <p>Decode</p>
+            <img class="button" id="decode" src="images/arrow-backward.png">
+        </div>
+        <textarea class="input-area" id="decode-area"></textarea>
     </div>
+
+    <div id="canvas" class="canvas">
+    </div>
+    <ul id = "interpretation">
+        <b>How to interpret this tree:</b>
+        <li>Numbers inside leaf nodes denote the frequency of its character</li>
+        <li>Numbers inside non-leaf nodes denote the total frequency of all leaf nodes below.</li>
+        <li>Characters below leaf nodes denote the character it encodes.</li>
+        <li>Binary strings below the character denote the encoding of that character.</li>
+        <li>Elements of the visualization may overlap due to the nature of the input</li>
+    </ul>
+    <p id="visualization-link">
+        The <a target=\"_blank\" href="https://llimllib.github.io/pymag-trees/">Knuth Algorithm</a> was used to generate this visualization of the tree.
+    </p>
+    <script src="node_modules\js-priority-queue\priority-queue.js"></script>
+    <script src="scripts/huffman.js"></script>
 </body>
-</html>

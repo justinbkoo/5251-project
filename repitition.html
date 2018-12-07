@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/repitition-styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <title>Some codes</title>
@@ -16,10 +17,38 @@
             <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="hamming.html">Hamming [7,4] Code</a></li>
+                <li><a href="syndrome.html">Syndrome Decoding</a></li>
                 <li><a href="repitition.html">Repititon Codes</a></li>
                 <li><a href="huffman.html">Huffman Codes</a></li>
             </ul>
         </div>
     </nav>
+    <div class = "instructions">
+        <ol><b>Instructions</b>
+            <li>Specify a repitition parameter and a bit error probability and enter text in the left textfield below.</li>
+            <li>Press "Encode" to see the binary repitition encoding in the middle textfield below.</li>
+            <li>Press "Decode" to decode the encoding back to text and display the results in the right textfield below.</li>
+            <b>Note:</b> When encoding, first we convert the text in the left textfield to its binary ASCII representation. Then we use the repititon code on it.
+            This is the result of the middle textfield.
+            <br>
+            Similarly, when decoding, we decode the contents of the middle textfield and convert it back to plain text. This is the result of the right textfield.
+        </ol>
+    </div>
+    <input id="repititions" size="30" placeholder="Enter the number of repititons" type="text">
+    <input id="error" size="30" placeholder="Enter the bit error probability" type="text">
+    <div class="input-board">
+        <textarea class="input-area" id="encode-area"></textarea>
+        <div class="buttons" id="encode-buttons">
+            <p>Encode</p>
+            <img class="button" id="encode" src="images/arrow-forward.png">
+        </div>
+        <textarea class="input-area" id="encoding-area"></textarea>
+        <div class="buttons" id="decode-buttons">
+            <p>Decode</p>
+            <img class="button" id="decode" src="images/arrow-forward.png">
+        </div>
+        <textarea class="input-area" id="decode-area"></textarea>
+    </div>
+    <script src="scripts/repitition.js"></script>
 </body>
 </html>
